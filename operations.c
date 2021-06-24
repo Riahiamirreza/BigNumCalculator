@@ -3,8 +3,6 @@
 
 void addition(int len, uint8_t *a, uint8_t *b, uint8_t *c){
 
-	uint8_t tmp_a, tmp_b;
-	bool ca, cb;
 	bool carry = 0;
 	int i;
 	for(i=0; i<len; i++){
