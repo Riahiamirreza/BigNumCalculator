@@ -2,15 +2,18 @@
 #define NUM_OBJ_H
 
 #include <stdbool.h>
-#define SMALLER(x, y) x->len > y->len ? x:y
+
+#define SMALLER_SIZE(x, y) x->size > y->size ? x->size:y->size
 
 typedef unsigned char Chunk;
 
 typedef struct 
 {
+
     Chunk* data;
     bool is_positive;
     size_t size;
+
 } NumObj;
 
 /*
