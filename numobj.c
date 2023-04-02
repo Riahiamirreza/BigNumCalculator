@@ -7,7 +7,7 @@ size_t calculate_size_of_add(const NumObj* a, const NumObj* b) {
 }
 
 Chunk get_carry(const Chunk x, const Chunk y) {
-    return x + y < x || x + y < y ? 1:0;
+    return (Chunk)(x + y) < x || (Chunk)(x + y) < y ? 1:0;
 }
 
 void add_numobj(const NumObj* a, const NumObj* b, NumObj* res) {
