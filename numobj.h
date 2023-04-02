@@ -4,11 +4,15 @@
 #include <stdbool.h>
 
 #define SMALLER_SIZE(x, y) (x->size > y->size ? x->size:y->size)
+#define PRINT_NUMOBJ(x) do {                      \
+        for (size_t i = 0; i < x->size; i++)      \
+            fprintf(stdout, " %c ", x->data[i]);  \
+        putc('\n', stdout);                       \
+    } while (0)
 
 typedef unsigned char Chunk;
 
-typedef struct 
-{
+typedef struct {
 
     Chunk* data;
     bool sign;
