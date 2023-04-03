@@ -14,7 +14,7 @@ void add_numobj(const NumObj* a, const NumObj* b, NumObj* res) {
     Chunk* pdata = (Chunk*)malloc(calculate_size_of_add(a, b));
     res->size = 0;
     Chunk carry = 0;
-    for (int i = 0; i < SMALLER_SIZE(a, b); i++) {
+    for (int i = 0; i <= SMALLER_SIZE(a, b); i++) {
         pdata[i] = a->data[i] + b->data[i] + carry;
         carry = get_carry(a->data[i], b->data[i]);
         res->size++;
