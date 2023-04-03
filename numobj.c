@@ -30,3 +30,26 @@ NumObj* new_numobj(const size_t size) {
     obj->size = size;
     return obj;
 }
+
+size_t calculate_long_size(long i) {
+    size_t s = 0;
+    while (i) {
+        i /= 256;
+        s++;
+    }
+    return s;
+}
+
+
+NumObj* numobj_fromlong(long x) {
+    NumObj* obj = (NumObj*)malloc(sizeof(NumObj));
+    obj->size = calculate_long_size(x);
+    Chunk* pdata = (Chunk*)malloc(obj->size);
+
+    for (int i = 0; i < obj->size; i++) {
+        pdata[i] = x%256;
+        x /= 256;
+    }
+    obj->data = pdata;
+    return obj;
+}

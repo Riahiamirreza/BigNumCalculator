@@ -30,4 +30,10 @@ void add_numobj(const NumObj* a, const NumObj* b, NumObj* res);
  */
 NumObj* new_numobj(const size_t size);
 
+
+/*
+ * Create a new NumObj from x.
+ */
+NumObj* numobj_fromlong(long x);
+
 #endif
